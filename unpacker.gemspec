@@ -9,11 +9,11 @@ Gem::Specification.new do |s|
   s.date = %q{2009-04-24}
   s.description = %q{Small library for unpacking various archives, extracted from Beanstalk (http://beanstalkapp.com) (and rewritten, in fact).}
   s.email = %q{underlog@gmail.com}
-  s.extra_rdoc_files = ["History.txt", "README.txt"]
-  s.files = ["History.txt", "README.txt", "Rakefile", "lib/unpacker.rb", "test/fixtures/archive-contents/sample-file", "test/fixtures/file.rar", "test/fixtures/file.tar", "test/fixtures/file.tar.bz", "test/fixtures/file.tar.gz", "test/fixtures/file.tbz", "test/fixtures/file.tgz", "test/fixtures/file.zip", "test/fixtures/invalid-file.gz", "test/fixtures/invalid-file.rar", "test/fixtures/invalid-file.tar.gz", "test/fixtures/invalid-file.zip", "test/fixtures/lipsum.txt.gz", "test/test_helper.rb", "test/unpacker_test.rb"]
+  s.extra_rdoc_files = ["History.txt", "README.markdown"]
+  s.files = ["History.txt", "README.markdown", "Rakefile", "lib/unpacker.rb", "test/fixtures/archive-contents/sample-file", "test/fixtures/file.rar", "test/fixtures/file.tar", "test/fixtures/file.tar.bz", "test/fixtures/file.tar.gz", "test/fixtures/file.tbz", "test/fixtures/file.tgz", "test/fixtures/file.zip", "test/fixtures/invalid-file.gz", "test/fixtures/invalid-file.rar", "test/fixtures/invalid-file.tar.gz", "test/fixtures/invalid-file.zip", "test/fixtures/lipsum.txt.gz", "test/test_helper.rb", "test/unpacker_test.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/underlog/unpacker}
-  s.rdoc_options = ["--main", "README.txt"]
+  s.rdoc_options = ["--main", "README.markdown"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{unpacker}
   s.rubygems_version = %q{1.3.1}
