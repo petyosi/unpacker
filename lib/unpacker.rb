@@ -19,8 +19,6 @@ module Unpacker
   def self.valid?(file)
     cmd = test_cmd_by_file_ext(file)% file
     system("#{cmd} 1>/dev/null 2>/dev/null")
-  rescue UnrecognizedArchiveError
-    false
   end
 
   # :stopdoc:
