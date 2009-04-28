@@ -1,6 +1,5 @@
 require 'fileutils'
 require 'tmpdir'
-require 'digest/sha1'
 
 module Unpacker
 
