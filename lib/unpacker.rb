@@ -6,6 +6,7 @@ module Unpacker
   class UnrecognizedArchiveError < StandardError; end
   class UnpackedFailedError < StandardError; end
 
+  SUPPORTED_FILEEXTS = %w[tar rar zip gz bz tgz bgz tar]
 
   def self.unpack(file, tmpdir = "/tmp", &block) 
     Dir.mktmpdir 'unpacker' do |dir|
@@ -13,6 +14,10 @@ module Unpacker
       system("#{cmd} 1>/dev/null") or raise UnrecognizedArchiveError($?)
       block.call(Dir.new(dir))
     end
+  end
+
+  def self.archive?(file)
+    SUPPORTED_FILEEXTS.include? File.extname(file).sub('.', '')
   end
 
   def self.valid?(file)
@@ -87,7 +92,7 @@ module Unpacker
     when /zip$/
       'unzip "%s" -d "%s"'
     when /gz$/
-      'gunzip -c "%s" > "%s/gz-contents"'
+      '(gunzip -c "%s" > "%s/gz-contents")'
     else
       raise UnrecognizedArchiveError
     end

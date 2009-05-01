@@ -4,7 +4,7 @@
 
 require 'rake/testtask'
 require 'rake/rdoctask'
-require 'rcov/rcovtask'
+#require 'rcov/rcovtask'
 
 begin
   require 'bones'

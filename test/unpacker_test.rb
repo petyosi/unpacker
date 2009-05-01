@@ -29,6 +29,11 @@ class UnpackerTest < Test::Unit::TestCase
     end
   end
 
+  def test_archive?
+    assert Unpacker.archive? 'test.tgz'
+    assert ! Unpacker.archive? 'test.txt'
+  end
+
   private 
 
   def files
