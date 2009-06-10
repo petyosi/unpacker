@@ -15,11 +15,17 @@ To test archives do:
 
     Unpacker.valid? 'path/to/file.zip'
 
+The method optionally accepts second argument, file name (if it is different than the file path). Handy if you test temp uploaded files. 
+
 To extract files do:
 
     Unpacker.unpack('path/to/myfile.zip') do |directory_that_contains_extracted_files|
       
     end
+
+To recognize archives do:
+
+    Unpacker.archive? 'path/to/archive.txt'
 
 In case the archive is not supported (currently working with zip, bzip, gzip, tar and rar) you may get UnrecognizedArchiveError in both methods.
 

@@ -2,10 +2,6 @@
 # configured in this Rakefile. The .rake files in the tasks directory
 # are where the options are used.
 
-require 'rake/testtask'
-require 'rake/rdoctask'
-#require 'rcov/rcovtask'
-
 begin
   require 'bones'
   Bones.setup
@@ -20,26 +16,12 @@ end
 ensure_in_path 'lib'
 require 'unpacker'
 
-task :default => :test
-
-desc 'Test the unpacker gem.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
-
-desc 'Performs code coverage on the unpacker gem.'
-Rcov::RcovTask.new do |t|
-  t.libs << "test"
-  t.test_files = FileList['test/*_test.rb']
-  t.verbose = true
-end
+task :default => 'spec:run'
 
 PROJ.name = 'unpacker'
-PROJ.authors = 'Petyo Ivanov'
-PROJ.email = 'underlog@gmail.com'
-PROJ.url = 'http://github.com/underlog/unpacker'
+PROJ.authors = 'FIXME (who is writing this software)'
+PROJ.email = 'FIXME (your e-mail)'
+PROJ.url = 'FIXME (project homepage)'
 PROJ.version = Unpacker::VERSION
 PROJ.rubyforge.name = 'unpacker'
 

@@ -16,12 +16,12 @@ module Unpacker
     end
   end
 
-  def self.archive?(file)
-    SUPPORTED_FILEEXTS.include? File.extname(file).sub('.', '')
+  def self.archive?(file_name)
+    SUPPORTED_FILEEXTS.include? File.extname(file_name).sub('.', '')
   end
 
-  def self.valid?(file)
-    cmd = test_cmd_by_file_ext(file)% file
+  def self.valid?(file_path, file_name = file_path)
+    cmd = test_cmd_by_file_ext(file_name)% file_path
     system("#{cmd} 1>/dev/null 2>/dev/null")
   end
 
@@ -71,12 +71,12 @@ module Unpacker
   def self.test_cmd_by_file_ext(file_name)
     case file_name
     when /rar$/
-      'rar t "%s"'
-    when /(tar|tgz|tar\.gz|tar\.bz|tbz)$/
+      'unrar t "%s"'
+    when /(tar|tar\.bz|tbz)$/
       'tar tf "%s"'
     when /zip$/
       'zip -T "%s"'
-    when /gz$/
+    when /gz|tgz$/
       'gunzip -t "%s"'
     else
       raise UnrecognizedArchiveError
