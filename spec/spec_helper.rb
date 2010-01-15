@@ -4,6 +4,11 @@ require 'unpacker'
 require 'spec'
 require 'spec/autorun'
 
-Spec::Runner.configure do |config|
-  
+Dir[ File.join(File.dirname(__FILE__), 'matchers/*') ].each do |matcher|
+  require matcher
 end
+
+Spec::Runner.configure do |config|
+
+end
+

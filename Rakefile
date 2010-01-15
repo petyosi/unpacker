@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "unpacker"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Abstraction for extracting various archives }
+    gem.description = %Q{The tool relies on the presence of the command-line tools.}
     gem.email = "underlog@gmail.com"
     gem.homepage = "http://github.com/underlog/unpacker"
     gem.authors = ["Petyo Ivanov"]
