@@ -45,7 +45,7 @@ In path.
 
 == INSTALL
 
-    sudo gem install underlog-unpacker
+    sudo gem install unpacker
 
 == Note on Patches/Pull Requests
 
