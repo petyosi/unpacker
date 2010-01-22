@@ -1,9 +1,54 @@
 = unpacker
 
-Description goes here.
+== DESCRIPTION
+
+Small library for unpacking various archives, extracted from Beanstalk (http://beanstalkapp.com) (and rewritten, in fact).
+
+== FEATURES/PROBLEMS
+
+None so far. Won't run on Windows, haven't tested.
+
+== SAMPLE USAGE
+
+To test archives do:
+
+    Unpacker.valid? 'path/to/file.zip'
+
+The method optionally accepts second argument, file name (if it is different than the file path). Handy if you test temp uploaded files.
+
+To extract files do:
+
+    Unpacker.unpack('path/to/myfile.zip') do |directory_that_contains_extracted_files|
+
+    end
+
+To recognize archives do:
+
+    Unpacker.archive? 'path/to/archive.txt'
+
+In case the archive is not supported (currently working with zip, bzip, gzip, tar and rar) you may get UnrecognizedArchiveError in both methods.
+
+The gem takes care to remove any temporary extractings after the block is executed; (uses /tmp/ directory).
+
+When working with .gz files (single archive), the extracted file is always called **gz-contents**.
+
+== REQUIREMENTS
+
+Relies on system calls, so you should have
+- unzip
+- unrar
+- tar
+- gunzip
+- bunzip
+
+In path.
+
+== INSTALL
+
+    sudo gem install underlog-unpacker
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
